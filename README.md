@@ -47,8 +47,8 @@ A lightweight JavaScript protection script to prevent content copying, right-cli
 
 ## نحوه استفاده
 
-1. ابتدا فایل `protect.js` را در پروژه خود قرار دهید.
-2. سپس آن را در صفحات HTML خود اضافه کنید:
+فایل zip  دانلود و از طریق پرستاشاپ نصب کنید و جاهای که دوست دارید غیر فعال کنید روی حالت فعال قرار بدید
+
 
 ```html
 <script src="js/protect.js"></script>
