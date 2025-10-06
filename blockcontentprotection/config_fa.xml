@@ -2,7 +2,7 @@
 <module>
     <name>blockcontentprotection</name>
     <displayName><![CDATA[Content Protection with Settings]]></displayName>
-    <version><![CDATA[1.2.3]]></version>
+    <version><![CDATA[1.2.4]]></version>
     <description><![CDATA[Protect your site content with customizable options.]]></description>
     <author><![CDATA[Mohammad Babaei]]></author>
     <tab><![CDATA[front_office_features]]></tab>
