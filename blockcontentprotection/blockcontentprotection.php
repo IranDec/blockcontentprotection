@@ -70,8 +70,8 @@ class BlockContentProtection extends Module
     public function getContent()
     {
         $output = '<div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
-            <img src="'.$this->_path.'logo.png" style="height: 50px;" alt="Module Logo">
-            <strong>Developed by Mohammad Babaei - <a href="https://adschi.com" target="_blank">adschi.com</a></strong>
+            <img src="' . $this->_path . 'logo.png" style="height: 50px;" alt="Module Logo">
+            <h2>' . $this->displayName . '</h2>
         </div>';
 
         if (Tools::isSubmit('submitBlockContentProtection')) {
@@ -84,7 +84,18 @@ class BlockContentProtection extends Module
             $output .= $this->displayConfirmation($this->l('Settings updated'));
         }
 
-        return $output . $this->renderForm();
+        return $output . $this->renderForm() . $this->getFooterHtml();
+    }
+
+    private function getFooterHtml()
+    {
+        $footer = '<div style="text-align: center; margin-top: 20px; padding: 20px; background-color: #f8f8f8; border-top: 1px solid #ddd;">';
+        $footer .= $this->name . ' v' . $this->version;
+        $footer .= ' | ' . $this->l('Developed by') . ' <a href="' . $this->website . '" target="_blank">' . $this->author . '</a>.';
+        $footer .= ' <a href="' . $this->website . '/contact" target="_blank">' . $this->l('Request custom module development or site optimization.') . '</a>';
+        $footer .= '</div>';
+
+        return $footer;
     }
 
     protected function renderForm()
