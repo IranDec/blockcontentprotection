@@ -7,7 +7,7 @@ class BlockContentProtection extends Module
     {
         $this->name = 'blockcontentprotection';
         $this->tab = 'front_office_features';
-        $this->version = '1.2.3';
+        $this->version = '1.2.4';
         $this->author = 'Mohammad Babaei';
         $this->website = 'https://adschi.com';
         $this->need_instance = 0;
