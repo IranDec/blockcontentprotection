@@ -7,7 +7,7 @@ class BlockContentProtection extends Module
     {
         $this->name = 'blockcontentprotection';
         $this->tab = 'front_office_features';
-        $this->version = '1.2.3';
+        $this->version = '1.3.0';
         $this->author = 'Mohammad Babaei';
         $this->website = 'https://adschi.com';
         $this->need_instance = 0;
@@ -84,7 +84,7 @@ class BlockContentProtection extends Module
             $output .= $this->displayConfirmation($this->l('Settings updated'));
         }
 
-        return $output . $this->renderForm();
+        return $output . $this->renderForm() . $this->displayFooter();
     }
 
     protected function renderForm()
@@ -158,5 +158,22 @@ class BlockContentProtection extends Module
         ];
 
         return $helper->generateForm([$fields_form]);
+    }
+
+    public function displayFooter()
+    {
+        $footer_text = $this->l('%module_name% Module v%version% | Developed by %author%.', 'footer');
+        $footer_text = str_replace(
+            ['%module_name%', '%version%', '%author%'],
+            [$this->displayName, $this->version, $this->author],
+            $footer_text
+        );
+
+        $custom_development_text = $this->l('Request custom module development or site optimization.', 'footer');
+
+        return '<div class="panel-footer" style="text-align: center; padding-top: 15px; border-top: 1px solid #ddd;">
+            ' . $footer_text . '
+            <a href="' . $this->website . '/contact-us" target="_blank">' . $custom_development_text . '</a>
+        </div>';
     }
 }
